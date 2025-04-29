@@ -9,29 +9,35 @@ A mini‑language, parser, and HTML generator that turns a compact tennis match 
 │   ├── stats.py             
 │   ├── report.py            
 │   ├── demo.txt             
-📁 demo_output/              # Auto‑generated when you run the demo
+📁 demo_output/              
 │   ├── report.html
 │   ├── bar.png
-│   └── parse_tree.png        # Only if --tree flag is passed
+│   └── parse_tree.png        
 requirements.txt
 README.md ← this file
 
 ## 2 Setup
 
 1 — Clone / unzip the repo
+```
 cd project‑root
+```
 
 2 — Create a clean venv (optional but recommended)
+```
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
+```
 
 3 — Install dependencies
+```
 pip install -r requirements.txt
-
+```
 ## 3  Quick‑start demo
+```
 python report.py demo.txt --tree  
 open demo_output/report.html  
-
+```
 What happens
 
 1. lexer_parser.py reads grammar.ebnf, builds an LALR parser, and transforms the log into a list of Point objects.
