@@ -1,0 +1,14 @@
+match: point_line+               // root rule
+                                   
+point_line: PLAYER ":" OUTCOME SHOT? LOCATION?   // one point
+
+// ──────────── terminals ────────────
+PLAYER:  "P1" | "P2"
+OUTCOME: "ACE" | "DF" | "WINNER" | "ERROR"
+SHOT:    "FH" | "BH" | "VOLLEY" | "SMASH"
+LOCATION:"T"  | "WIDE" | "CC" | "DL"
+
+// ──────────── whitespace & newlines ────────────
+%import common.WS_INLINE
+%ignore WS_INLINE           // spaces / tabs
+%ignore /[\r\n]+/           // throw away new-lines

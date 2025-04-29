@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tennis Stats</title></head>
+<body>
+<h1>Tennis Stats Dashboard</h1>
+<h2>Outcome Counts</h2>
+{{ outcome_table | safe }}
+<h2>Aces vs Double Faults</h2>
+{{ ace_df_table | safe }}
+<img src="bar.png" alt="Outcome Bar Chart"/>
+</body>
+</html>
