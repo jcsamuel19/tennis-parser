@@ -105,6 +105,22 @@ location     : "CC" | "DL" | "T" | "WIDE"
 
 **Parsing order:** Because Lark’s default lexer is regex‑based and unambiguously tokenises literals, the grammar remains LL(1)/LALR‑friendly. Each optional is right‑growing—so ambiguous inputs like P1: ACE WIDE still parse correctly (WIDE becomes location).
 
+**Parse Tree:**
+```
+match
+ ├── point_line
+ │   ├── player    P1
+ │   ├── outcome   ACE
+ │   └── location  T
+ ├── point_line
+ │   ├── player    P2
+ │   └── outcome   DF
+ └── point_line
+     ├── player    P1
+     ├── outcome   WINNER
+     ├── shot      FH
+     └── location  CC
+```
 ### 4. Why parse at all?
 
 Parsing converts that free-form text into structured data once, so everything after—statistics, HTML tables, bar charts—becomes a few pandas operations.
