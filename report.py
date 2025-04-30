@@ -94,4 +94,4 @@ if __name__ == "__main__":
 
     text = Path(args.log).read_text(encoding="utf-8")
     html_path = build_report(text, show_tree=args.tree)
-    print(f"✅  Report generated: {html_path.relative_to(Path.cwd())}")
+    print(f"Report generated: {html_path.relative_to(Path.cwd())}")

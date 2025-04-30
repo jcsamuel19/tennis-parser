@@ -1,7 +1,4 @@
-"""Parse MatchNote DSL → list[Point] using Lark.
-Run as script for quick inspection:
-$ python lexer_parser.py demo.txt --tree
-"""
+
 
 from __future__ import annotations
 from pathlib import Path
@@ -27,7 +24,6 @@ class Point(NamedTuple):
 _GRAMMAR_PATH = Path(__file__).parent / "grammar.ebnf"
 _GRAMMAR_TEXT = _GRAMMAR_PATH.read_text(encoding="utf-8")
 
-# Lark instance is cheap to build; cache it at module import
 _PARSER = Lark(
     _GRAMMAR_TEXT,
     parser="lalr",
